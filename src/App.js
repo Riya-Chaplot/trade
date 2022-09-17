@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Inbound from './inbound/inbound';
+import Inboundheader from './inboundheader/inboundheader';
+import { BrowserRouter, Routes, Route,Link } from "react-router-dom";
+import InboundChecker from './InboundChecker/InboundChecker';
 
 function App() {
   return (
+  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+       {/* <Route path='/' element={<Inboundheader/>}/> */}
+      <Route path='/' element={<Inbound/>}/>
+      <Route path='/pdfcheck' element={<InboundChecker/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
